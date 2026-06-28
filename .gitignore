@@ -1,0 +1,19 @@
+# Entorno virtual de Python
+.venv/
+venv/
+
+# Caché de Python
+__pycache__/
+*.pyc
+
+# Datos generados (no se suben al repo)
+data/*.csv
+
+# Credenciales / GCP (NUNCA subir claves)
+*-key.json
+service-account*.json
+credentials.json
+.env
+
+# Sistema
+.DS_Store
