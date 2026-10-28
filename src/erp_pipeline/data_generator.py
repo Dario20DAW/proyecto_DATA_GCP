@@ -125,7 +125,11 @@ def generar_datos_crudos(
 # Este bloque solo se ejecuta si lanzas el archivo directamente
 # (python -m src.erp_pipeline.data_generator), no si lo importas desde otro sitio.
 if __name__ == "__main__":
+    from .storage import guardar_csv  # import relativo: módulo hermano dentro del paquete
+
     datos = generar_datos_crudos(n_clientes=50, n_proveedores=15, n_productos=30, n_facturas=300)
     for nombre, df in datos.items():
         print(f"{nombre}: {len(df)} filas")
         print(df.head(), "\n")
+
+    guardar_csv(datos, carpeta="data")
